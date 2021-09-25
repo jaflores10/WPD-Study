@@ -96,10 +96,10 @@ library(visdat)
 library(viridis)
 
 # Read shape data
-NHtracts=readOGR("data/NHtract_map.shp")
+NHtracts=readOGR("Data/NHtract_map.shp")
 
 # WPD arrest data
-data=read.csv("data/wpd_arrests_race_tract1018_clean.csv")
+data=read.csv("Data/wpd_arrests_race_tract1018_clean.csv")
 nrow(data)
 
 data1 = data[!(data$census_tract_code == 990100),]
@@ -157,7 +157,7 @@ data1$SIR_W = SIR_w
 summary(data1)
 
 
-d.inla_1 = read.csv("data/INLAdata.csv")[,-1]
+d.inla_1 = read.csv("Data/INLAdata.csv")[,-1]
 
 id = d.inla_1$id2
 # Poisson Regression - Total arrests
