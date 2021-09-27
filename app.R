@@ -162,7 +162,7 @@ d.inla_1 = read.csv("Data/INLAdata.csv")[,-1]
 id = d.inla_1$id2
 # Poisson Regression - Total arrests
 ftot = d.inla_1$arrests_total ~ d.inla_1$black + d.inla_1$poverty + d.inla_1$educBachPlus + d.inla_1$secperctot + d.inla_1$age1824.perc + f(id, model="iid", param=c(2,1))
-restot=inla(ftot1, data=d.inla_1, family='poisson', E=eTot, control.compute=list(dic=TRUE, waic=TRUE))
+restot=inla(ftot, data=d.inla_1, family='poisson', E=eTot, control.compute=list(dic=TRUE, waic=TRUE))
 # Poisson Regression - Black arrests
 ftot_b = d.inla_1$arrests_B ~ d.inla_1$black + d.inla_1$poverty + d.inla_1$educBachPlus + d.inla_1$secperctot + d.inla_1$age1824.perc + f(id, model="iid", param=c(2,1))
 restot_b = inla(ftot_b, data=d.inla_1, family='poisson', E=eBlk, control.compute=list(dic=TRUE, waic=TRUE))
