@@ -157,7 +157,7 @@ data1$SIR_W = SIR_w
 summary(data1)
 
 
-d.inla_1 = read.csv("Data/INLAdata.csv")[,-1]
+d.inla_1=read.csv("Data/INLAdata.csv")[,-1]
 
 id = d.inla_1$id2
 # Poisson Regression - Total arrests
